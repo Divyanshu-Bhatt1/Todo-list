@@ -12,14 +12,14 @@ mongoose.connect(process.env.MONGO_URI).then(()=>console.log("connected to datab
 
 // mongoose.connect('mongodb+srv://admin-divyanshu:Test123@cluster0.wobhf1u.mongodb.net/todoListDB?appName=mongosh+1.10.6').then(()=>console.log("connected to database")).catch((err)=>console.log("Error : ",err))
 
-const itemSchema=new mongoose.Schema({
-    name:{
-      type:String,
-      required:true
-    }
-})
+const itemSchema = new mongoose.Schema({
+  name: {
+      type: String,
+      required: true
+  }
+});
 
-const dataItem=mongoose.model("dataItems",itemSchema)
+const dataItem = mongoose.model("dataItem", itemSchema);
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
