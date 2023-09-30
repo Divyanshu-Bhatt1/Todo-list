@@ -19,7 +19,7 @@ const itemSchema=new mongoose.Schema({
     }
 })
 
-const dataItem=mongoose.model("dataItem",itemSchema)
+const dataItem=mongoose.model("dataItems",itemSchema)
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
