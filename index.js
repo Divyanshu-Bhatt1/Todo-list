@@ -5,10 +5,10 @@ const bodyParser = require("body-parser");
 const mongoose=require('mongoose')
 const _=require("lodash")
 
-const port=process.env.PORT || 3000;
+const PORT=process.env.PORT ;
 const app = express();
 
-mongoose.connect(process.env.MONGO_URI).then(()=>console.log("connected to database")).catch((err)=>console.log("Error : ",err))
+mongoose.connect(process.env.MONGODB_CONNECT_URI).then(()=>console.log("connected to database")).catch((err)=>console.log("Error : ",err))
 
 // mongoose.connect('mongodb+srv://admin-divyanshu:Test123@cluster0.wobhf1u.mongodb.net/todoListDB?appName=mongosh+1.10.6').then(()=>console.log("connected to database")).catch((err)=>console.log("Error : ",err))
 
@@ -134,6 +134,6 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(port, function() {
-  console.log(`Server started on port ${port}`);
+app.listen(PORT, function() {
+  console.log(`Server started on port ${PORT}`);
 });
