@@ -60,7 +60,7 @@ app.get("/", function(req, res) {
 
 
 });
-mongoose.set('strictQuery', false);
+mongoose.set('strictQuery', true);
 app.post("/", function(req, res){
 
   const itemName= req.body.newItem;
